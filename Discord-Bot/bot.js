@@ -50,7 +50,7 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 });
             break;
             // !friend
-            case 'i am your friend?':
+            case 'friend':
                 bot.sendMessage({
                     to: channelID,
                     message: 'You are not my friend my friend.. You are my brother my friend!'
