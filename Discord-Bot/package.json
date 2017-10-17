@@ -1,0 +1,11 @@
+{
+    "name": "Aila",
+    "version": "1.0.0",
+    "description": "The Aila Chat Bot, as developed by Aila Corp.",
+    "main": "bot.js",
+    "author": "Aila Corp",
+    "dependencies": {
+        "discord.io": "^2.5.3",
+        "winston": "^2.4.0"
+    }
+}
