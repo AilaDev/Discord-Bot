@@ -17,15 +17,18 @@ var bot = new Discord.Client({
    token: auth.token,
    autorun: true
 });
+// Listener for ready event and Logging bot login
 bot.on('ready', function (evt) {
     logger.info('Connected');
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
 });
+//#endregion
+
+//#region Listener for all messages
 bot.on('message', function (user, userID, channelID, message, evt) {
-    // Our bot needs to know if it will execute a command
+    // Aila needs to know if it will execute a command
     // It will listen for messages that will start with `!`
-    // This is so we can have it in a server and speak to it
     if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
         var cmd = args[0];
@@ -38,8 +41,17 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: channelID,
                     message: 'Pong!'
                 });
+            case 'Hello':
+                bot.sendMessage({
+                    to:channelID,
+                    message: 'Hello my friend'
+                });
+            case 'I am your friend?':
+                bot.sendMessage({
+                    to:channelID,
+                    message: 'You are not my friend my friend.. You are my brother my friend!'
+                });
             break;
-            // Any additionaly commands
          }
      }
 });
