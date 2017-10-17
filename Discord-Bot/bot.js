@@ -41,14 +41,18 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     to: channelID,
                     message: 'Pong!'
                 });
-            case 'Hello':
+            break;
+            // !hello
+            case 'hello':
                 bot.sendMessage({
-                    to:channelID,
+                    to: channelID,
                     message: 'Hello my friend'
                 });
-            case 'I am your friend?':
+            break;
+            // !friend
+            case 'i am your friend?':
                 bot.sendMessage({
-                    to:channelID,
+                    to: channelID,
                     message: 'You are not my friend my friend.. You are my brother my friend!'
                 });
             break;
